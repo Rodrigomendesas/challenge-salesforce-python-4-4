@@ -2,10 +2,12 @@ import csv
 import oracledb
 from databaseConnection import database_connection
 
-def inserir_dados_no_banco_de_dados():
+def inserir_dados_no_banco_de_dados(filepath, table_name):
+    
+    conn = database_connection()
+    cursor = conn.cursor()
     
     try:
-        cursor = conn.cursor()
         
         with open(filepath, mode='r', newline='') as file:
             csv_reader = csv.reader(file)

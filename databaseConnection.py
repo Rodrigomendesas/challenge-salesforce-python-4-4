@@ -1,10 +1,9 @@
 import oracledb
-import pwinput
 
 def database_connection():
 
-    login = input('Usuário: ')
-    senha = pwinput.pwinput('Senha: ')
+    login = "RM552602"
+    senha = 120203
     
     try:
         conn = oracledb.connect(user=login,
