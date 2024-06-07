@@ -1,11 +1,9 @@
-from databaseConnection import database_connection
 from consultarDados import consultar_dados
 from inderirDadosNoBancoDeDados import inserir_dados_no_banco_de_dados
 from dataBankReader import consultar_banco_de_dados
 
 def acessar_banco():
 
-    database_connection()
     InsercaoAberta = True
 
     while InsercaoAberta:
@@ -20,13 +18,13 @@ def acessar_banco():
         match escolha:
             case 1:
                 filepath = "1- producao-de-plastico-global.csv"
-                table_name = 
-                inserir_dados_no_banco_de_dados(filepath)
+                table_name = "PRODUCAO_PLASTICO_GLOBAL"
+                inserir_dados_no_banco_de_dados(filepath, table_name)
             case 2:
                 filepath = "5- poluicao-agua-cidades.csv"
-                table_name = 
+                table_name = "POLUICAO_AGUAS_CIDADES"
 
-                inserir_dados_no_banco_de_dados(filepath)
+                inserir_dados_no_banco_de_dados(filepath, table_name)
             case 0:
                 InsercaoAberta = False
             case _:
